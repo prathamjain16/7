@@ -99,6 +99,15 @@ function keyPressed() {
   }
 }
 
+//function to show the arrows
+function showArrows(arrows, index) {
+  arrows.display();
+  if (arrows.body.position.x >= width || arrows.body.position.y >= height - 50) {
+    Matter.World.remove(world, arrows.body);
+    arrowss.splice(index, 1);
+  }
+}
+
 function keyReleased () {
 
   if(keyCode === 32){
